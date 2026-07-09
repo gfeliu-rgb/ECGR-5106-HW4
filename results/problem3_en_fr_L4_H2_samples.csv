@@ -1,9 +1,9 @@
 direction,num_layers,num_heads,source,reference,prediction,exact_match,sentence_bleu4
-English-to-French,4,2,i can see a large cruise ship in the distance,je peux voir un grand navire de croisiere au loin,,False,0.0
-English-to-French,4,2,she is looking for her lost dog,elle cherche son chien perdu,,False,0.0
-English-to-French,4,2,he finished his homework quickly,il a fini ses devoirs rapidement,,False,0.0
-English-to-French,4,2,we prefer walking through the quiet botanical gardens,nous preferons nous promener dans les jardins botaniques calmes,,False,0.0
-English-to-French,4,2,they visit museums often,ils visitent souvent des musees,,False,0.0
-English-to-French,4,2,the summer is very hot here,l'ete est tres chaud ici,,False,0.0
-English-to-French,4,2,she works part time at the library,elle travaille a temps partiel a la bibliotheque,,False,0.0
-English-to-French,4,2,the snow is melting fast,la neige fond rapidement,,False,0.0
+English-to-French,4,2,i can see a large cruise ship in the distance,je peux voir un grand navire de croisiere au loin,je vois un avion dans le ciel,False,0.13391424795650428
+English-to-French,4,2,she is looking for her lost dog,elle cherche son chien perdu,elle cherche son chat perdu partout,False,0.4347208719449915
+English-to-French,4,2,he finished his homework quickly,il a fini ses devoirs rapidement,il a fini son test en avance,False,0.345720784641941
+English-to-French,4,2,we prefer walking through the quiet botanical gardens,nous preferons nous promener dans les jardins botaniques calmes,nous avons celebre leur anniversaire de haute montagne a pied des courses souvent des recherches,False,0.08225964699966554
+English-to-French,4,2,they visit museums often,ils visitent souvent des musees,ils parlent souvent des tendances de la mode,False,0.22679164443904004
+English-to-French,4,2,the summer is very hot here,l'ete est tres chaud ici,la soupe est tres chaude,False,0.35930411196308426
+English-to-French,4,2,she works part time at the library,elle travaille a temps partiel a la bibliotheque,elle a plein temps a l'hopital,False,0.19902510067151713
+English-to-French,4,2,the snow is melting fast,la neige fond rapidement,la fond fond chaud,False,0.3976353643835253

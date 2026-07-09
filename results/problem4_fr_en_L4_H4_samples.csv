@@ -1,9 +1,9 @@
 direction,num_layers,num_heads,source,reference,prediction,exact_match,sentence_bleu4
-French-to-English,4,4,je peux voir un grand navire de croisiere au loin,i can see a large cruise ship in the distance,the,False,7.33799085404856e-05
-French-to-English,4,4,elle cherche son chien perdu,she is looking for her lost dog,the,False,0.0012393760883331792
-French-to-English,4,4,il a fini ses devoirs rapidement,he finished his homework quickly,the,False,0.00915781944436709
-French-to-English,4,4,nous preferons nous promener dans les jardins botaniques calmes,we prefer walking through the quiet botanical gardens,the,False,0.0005422082607400484
-French-to-English,4,4,ils visitent souvent des musees,they visit museums often,the,False,0.024893534183931972
-French-to-English,4,4,l'ete est tres chaud ici,the summer is very hot here,the,False,0.004006407255911835
-French-to-English,4,4,elle travaille a temps partiel a la bibliotheque,she works part time at the library,the,False,0.0014738748624100577
-French-to-English,4,4,la neige fond rapidement,the snow is melting fast,the,False,0.010890544041151608
+French-to-English,4,4,je peux voir un grand navire de croisiere au loin,i can see a large cruise ship in the distance,i want a hot cup of winter,False,0.13391424795650428
+French-to-English,4,4,elle cherche son chien perdu,she is looking for her lost dog,she dances gracefully,False,0.11909345107359583
+French-to-English,4,4,il a fini ses devoirs rapidement,he finished his homework quickly,he finished his science project ahead of schedule,False,0.2984745896009823
+French-to-English,4,4,nous preferons nous promener dans les jardins botaniques calmes,we prefer walking through the quiet botanical gardens,we walk in the historic,False,0.1658165975077607
+French-to-English,4,4,ils visitent souvent des musees,they visit museums often,they often talk about environmental conservation efforts,False,0.20556680845025982
+French-to-English,4,4,l'ete est tres chaud ici,the summer is very hot here,the coffee is very hot,False,0.43989172475842214
+French-to-English,4,4,elle travaille a temps partiel a la bibliotheque,she works part time at the library,she works at the party,False,0.3028512683288236
+French-to-English,4,4,la neige fond rapidement,the snow is melting fast,the thick snow is melting remarkably fast,False,0.38260294162784475

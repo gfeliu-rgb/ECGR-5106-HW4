@@ -1,55 +1,59 @@
 epoch,train_loss,valid_loss,valid_accuracy,valid_top3_accuracy,valid_perplexity,experiment,sequence_length,num_layers,num_heads,d_model,parameter_count,approx_attention_ops,train_seconds,inference_seconds_per_sample,vocab_size,generated_output
-2,2.2342928684617283,2.1842129325866697,0.3748125,0.60321875,8.883653766657075,problem2_baseline,20,2,2,48,63032,1144320,2.9705755079999108,0.00032201770000028773,56,"NENENIUS:
-s ad limaith be th ay wager tal cad, be ghile his, rad sprad, anye say do ben that lulla pre, poug her othelpr arey
-ive, I useingr n this, Citizen: iflor? I ghimuge oun a "
-2,2.2481317600986834,2.1894341468811036,0.373875,0.59125,8.930158526701852,problem2_baseline,30,2,2,48,63512,1745280,4.365606293999917,0.0003383224000003793,56,"NIf not thinti tho he the s we thailllary
-You well there kerplile gesensen:
-pabeat, he dil: wor ghe
-Th stse you thou whe be thecous ary cea'genol
-The avearitse sen you
-me, the cound"
-2,2.312831387976462,2.2501374435424806,0.3606875,0.587875,9.489039954001216,problem2_hyper,30,1,2,48,35240,872640,2.3515938460000143,0.00021128500000031636,56,"NI: thop.
+5,1.5864519872761011,2.1784026222229005,0.4022,0.631525,8.832186645873996,problem2_baseline,20,2,2,64,108729,2017280,12.093691289999697,0.0003420744500090223,57,"NENIUS:
+Ither us, thould batt fromport ther you hat forest no you not the of baing trounds,
+What him not
+you, good.
 
-NENIUTherat it ne woor to dare hout hatt Cid the.
+Secar whore ser hemost therats ceave uld us,
+Of it send crough h"
+5,1.49664732575267,2.2151474609375,0.4102166666666667,0.6382833333333333,9.162760161196296,problem2_baseline,30,2,2,64,109369,3064320,17.92513065700041,0.00045684359997721913,57,"NIUS:
+What thee gread finds and in this good ready righ, most we mither?
 
-Ae vitize at Cisr ve, feol Cit
-stenly ponor then seinat ather the horpeealenbebed wof Berousipfecot urist hou'e thers t"
-2,2.3288321081847188,2.288027858734131,0.3405625,0.5803958333333333,9.855482099957323,problem2_hyper,30,1,4,48,35240,872640,2.6803509860001213,0.00022624885000368521,56,"NENNDoun: that th payousis becit atonndin s.
+All:
+First juston that ip tribe are at us and in, to must it surreer, but us your ne'st the re and cropeak."
+5,1.707892106049034,2.1634987144470217,0.39503333333333335,0.6358666666666667,8.701528626719762,problem2_hyper,30,1,2,64,59385,1532160,9.65931901499971,0.0002296821499840007,57,"NIUS:
+Eve s Mell, the fay the but, brell hel the you.
 
-Yon:
-D nen? Cisst CENouratit thesar tho e
-whathand d geletilin pereatny, te.
-Nirs we, heyou cillveed alg anof we I heouthe findrsus, pe"
-2,2.2481317600986834,2.1894341468811036,0.373875,0.59125,8.930158526701852,problem2_hyper,30,2,2,48,63512,1745280,4.387389885999937,0.0003388096999970003,56,"NIf not thinti tho he the s we thailllary
-You well there kerplile gesensen:
-pabeat, he dil: wor ghe
-Th stse you thou whe be thecous ary cea'genol
-The avearitse sen you
-me, the cound"
-2,2.265897692166842,2.2272390270233156,0.36554166666666665,0.5857083333333334,9.274224814260084,problem2_hyper,30,2,4,48,63512,1745280,4.972726871999839,0.00035516254999947707,56,"NIUS:
-Wherst.
+Sof thereath the elce stay it not, del, ans:
+MOf and ba hepet we and the deate lich leak.
 
-MENENENENIUS:
-Wendie rd, ppl, Le?ousmecouiced, ace whan:
+First Citizen:
+All:
+You are clo'd, "
+5,1.6654153114280557,2.1966021804809572,0.3983,0.63395,8.994400171141347,problem2_hyper,30,1,4,64,59385,1532160,10.545372861000033,0.00023586609995618346,57,"NI youlds, I nansweir stablicit at us a speak sided, ince,
+You mer there stronge lark food belly. Warthe live.
 
-Yorshe's. whe pf wenoy, story MENENENour aconthichinke ccikns thite od thevan thurale,, herd thell,
+Sen:
+The go poors o' the core me menpirst us is make ince his ret, in"
+5,1.49664732575267,2.2151474609375,0.4102166666666667,0.6382833333333333,9.162760161196296,problem2_hyper,30,2,2,64,109369,3064320,17.9280310059994,0.00036780834998353387,57,"NIUS:
+What thee gread finds and in this good ready righ, most we mither?
 
-Wharmer"
-2,2.201335620655557,2.170457706451416,0.38295833333333335,0.595375,8.762293681398813,problem2_hyper,30,4,2,48,120056,3490560,8.229839240000047,0.0005820823500016558,56,"NI can beld it ibetatand thy oo callo'Ugay our whod s har that your thery hereys
-Alpeve your e an
-Whe alproIUd wely co le plit wict, bey Whan s they-here innind cus ton lprat cared "
-2,2.2051786942234965,2.16664701461792,0.37322916666666667,0.6019166666666667,8.72896681995309,problem2_hyper,30,4,4,48,120056,3490560,9.424641613999938,0.0006243507000021964,56,"NIUS:
-I mouce illd Firsnd to Cenelitilbengang averer
-Ye panve tid fay beand acariorern;-e thaly tis s
-o noundy michoun nt mene ein wits s!
-:
-Anere Cifoures we ansorans aker
-d.
+All:
+First juston that ip tribe are at us and in, to must it surreer, but us your ne'st the re and cropeak."
+5,1.4470236527874898,2.284882884979248,0.40458333333333335,0.6290333333333333,9.824535555952913,problem2_hyper,30,2,4,64,109369,3064320,19.706966976999865,0.000383152800031894,57,"NIUS:
+Who you sup, miner
+The with se preartiong to surser?
 
-Sell"
-2,2.285490380234606,2.244209394454956,0.3583625,0.584275,9.432954861196032,problem2_seq50,50,2,2,48,64472,3004800,7.601041072000044,0.00042165964999867355,56,"NENILem,
-Orseround our brershelys, sidlf you. s,
+First Citizen:
+Come have your surser hatly to the covens.
 
-Your thease Chen:
-e ot he ithe henstoutroullery,
-Whoulle ble you wou thloulley, he theake ghe woushen woure lille they Ciche foufno"
+Second Citizen:
+Seconted I to the care his, for hiselms a good"
+5,1.2216054393476345,2.47159259223938,0.4061166666666667,0.6286333333333334,11.841290189646932,problem2_hyper,30,4,2,64,209337,6128640,34.02195980899978,0.0006483232499704172,57,"NENIUS:
+Soft-hong what shop
+Off the storther the gods. What then?
+
+First Citizen:
+Soft will you all answer'd,
+What serves the stoft with our surfering his answer? I
+speaks with moul"
+5,1.1994743252638143,2.453550168991089,0.40613333333333335,0.6316333333333334,11.62956042292332,problem2_hyper,30,4,4,64,209337,6128640,37.758767829000135,0.0006626948000302945,57,"No bellions I' the most of your belly,
+And through we but answer'd: the greby
+Lefore pleetty roce usay to way he is
+is chountry do, this country it;
+Which is, the but patriciong wor"
+5,1.3787793802465282,2.298821228027344,0.41274,0.64085,9.962432094944866,problem2_seq50,50,2,2,64,110649,5235200,31.039611066999896,0.00045068720000926985,57,"NENIUS:
+I should tenemost theas them
+I dik sUS:
+The gof what how to fay are from resolly he lovige to daily you
+And by alk thud at thus for whe hat say butty she rever you do rupons"

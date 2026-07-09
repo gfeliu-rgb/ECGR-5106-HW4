@@ -1,9 +1,9 @@
 direction,num_layers,num_heads,source,reference,prediction,exact_match,sentence_bleu4
-French-to-English,1,4,je peux voir un grand navire de croisiere au loin,i can see a large cruise ship in the distance,the,False,7.33799085404856e-05
-French-to-English,1,4,elle cherche son chien perdu,she is looking for her lost dog,the,False,0.0012393760883331792
-French-to-English,1,4,il a fini ses devoirs rapidement,he finished his homework quickly,,False,0.0
-French-to-English,1,4,nous preferons nous promener dans les jardins botaniques calmes,we prefer walking through the quiet botanical gardens,,False,0.0
-French-to-English,1,4,ils visitent souvent des musees,they visit museums often,,False,0.0
-French-to-English,1,4,l'ete est tres chaud ici,the summer is very hot here,the,False,0.004006407255911835
-French-to-English,1,4,elle travaille a temps partiel a la bibliotheque,she works part time at the library,,False,0.0
-French-to-English,1,4,la neige fond rapidement,the snow is melting fast,,False,0.0
+French-to-English,1,4,je peux voir un grand navire de croisiere au loin,i can see a large cruise ship in the distance,i will send tomorrow,False,0.08017158404431235
+French-to-English,1,4,elle cherche son chien perdu,she is looking for her lost dog,she is looking for her cat,False,0.6848940448305334
+French-to-English,1,4,il a fini ses devoirs rapidement,he finished his homework quickly,he finished his book yesterday,False,0.5081327481546147
+French-to-English,1,4,nous preferons nous promener dans les jardins botaniques calmes,we prefer walking through the quiet botanical gardens,we visited the ancient castle,False,0.1658165975077607
+French-to-English,1,4,ils visitent souvent des musees,they visit museums often,they often talk about environmental conservation efforts,False,0.20556680845025982
+French-to-English,1,4,l'ete est tres chaud ici,the summer is very hot here,the winter is very cold here,False,0.3303164318013807
+French-to-English,1,4,elle travaille a temps partiel a la bibliotheque,she works part time at the library,she works from home on thursdays,False,0.24608524656663955
+French-to-English,1,4,la neige fond rapidement,the snow is melting fast,the thick snow is melting remarkably,False,0.4347208719449915

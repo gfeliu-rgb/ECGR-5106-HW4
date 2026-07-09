@@ -1,9 +1,9 @@
 direction,num_layers,num_heads,source,reference,prediction,exact_match,sentence_bleu4
-French-to-English,1,2,je peux voir un grand navire de croisiere au loin,i can see a large cruise ship in the distance,the,False,7.33799085404856e-05
-French-to-English,1,2,elle cherche son chien perdu,she is looking for her lost dog,the,False,0.0012393760883331792
-French-to-English,1,2,il a fini ses devoirs rapidement,he finished his homework quickly,the,False,0.00915781944436709
-French-to-English,1,2,nous preferons nous promener dans les jardins botaniques calmes,we prefer walking through the quiet botanical gardens,the,False,0.0005422082607400484
-French-to-English,1,2,ils visitent souvent des musees,they visit museums often,the,False,0.024893534183931972
-French-to-English,1,2,l'ete est tres chaud ici,the summer is very hot here,the,False,0.004006407255911835
-French-to-English,1,2,elle travaille a temps partiel a la bibliotheque,she works part time at the library,the,False,0.0014738748624100577
-French-to-English,1,2,la neige fond rapidement,the snow is melting fast,the,False,0.010890544041151608
+French-to-English,1,2,je peux voir un grand navire de croisiere au loin,i can see a large cruise ship in the distance,i am reading a nice smell,False,0.1255107248036171
+French-to-English,1,2,elle cherche son chien perdu,she is looking for her lost dog,she lost her lost her lost her lost my ring,False,0.17827531042796255
+French-to-English,1,2,il a fini ses devoirs rapidement,he finished his homework quickly,he teaches mathematics at pm,False,0.2730120862709067
+French-to-English,1,2,nous preferons nous promener dans les jardins botaniques calmes,we prefer walking through the quiet botanical gardens,we live in the in the in the in the in the in the in the in the in the in the in the in the in the in the,False,0.044644767873512764
+French-to-English,1,2,ils visitent souvent des musees,they visit museums often,they often talk about modern fashion,False,0.24446151121745047
+French-to-English,1,2,l'ete est tres chaud ici,the summer is very hot here,the coffee is very cold,False,0.31610981104846864
+French-to-English,1,2,elle travaille a temps partiel a la bibliotheque,she works part time at the library,she works part time at the auction,False,0.8408964152537145
+French-to-English,1,2,la neige fond rapidement,the snow is melting fast,the thick snow is melting remarkably fast,False,0.38260294162784475

@@ -531,22 +531,22 @@ def bar_plot(csv_name, x_col, y_col, title, out_name):
 
 def run_all():
     print(f"Using device: {DEVICE}")
-    p1_rows = [train_char_run(CHAR_TEXT, seq, "problem1_transformer", epochs=5, d_model=48, num_layers=2, nhead=2) for seq in (10, 20, 30)]
+    p1_rows = [train_char_run(CHAR_TEXT, seq, "problem1_transformer", epochs=30, d_model=64, num_layers=2, nhead=2) for seq in (10, 20, 30)]
     pd.DataFrame(p1_rows).to_csv(RESULTS_DIR / "problem1_transformer_summary.csv", index=False)
 
     tiny = (DATA_DIR / "tiny_shakespeare.txt").read_text(encoding="utf-8")
     p2_rows = []
     for seq in (20, 30):
-        p2_rows.append(train_char_run(tiny, seq, "problem2_baseline", epochs=2, max_chars=8000, d_model=48, num_layers=2, nhead=2))
+        p2_rows.append(train_char_run(tiny, seq, "problem2_baseline", epochs=5, max_chars=10000, d_model=64, num_layers=2, nhead=2))
     for layers in (1, 2, 4):
         for heads in (2, 4):
-            p2_rows.append(train_char_run(tiny, 30, "problem2_hyper", epochs=2, max_chars=8000, d_model=48, num_layers=layers, nhead=heads))
-    p2_rows.append(train_char_run(tiny, 50, "problem2_seq50", epochs=2, max_chars=8000, d_model=48, num_layers=2, nhead=2))
+            p2_rows.append(train_char_run(tiny, 30, "problem2_hyper", epochs=5, max_chars=10000, d_model=64, num_layers=layers, nhead=heads))
+    p2_rows.append(train_char_run(tiny, 50, "problem2_seq50", epochs=5, max_chars=10000, d_model=64, num_layers=2, nhead=2))
     pd.DataFrame(p2_rows).drop_duplicates(["experiment", "sequence_length", "num_layers", "num_heads"]).to_csv(RESULTS_DIR / "problem2_transformer_summary.csv", index=False)
 
-    p3_rows = [train_translation_run("en_fr", layers, heads, epochs=2, d_model=48) for layers in (1, 2, 4) for heads in (2, 4)]
+    p3_rows = [train_translation_run("en_fr", layers, heads, epochs=35, d_model=64) for layers in (1, 2, 4) for heads in (2, 4)]
     pd.DataFrame(p3_rows).to_csv(RESULTS_DIR / "problem3_transformer_summary.csv", index=False)
-    p4_rows = [train_translation_run("fr_en", layers, heads, epochs=2, d_model=48) for layers in (1, 2, 4) for heads in (2, 4)]
+    p4_rows = [train_translation_run("fr_en", layers, heads, epochs=35, d_model=64) for layers in (1, 2, 4) for heads in (2, 4)]
     pd.DataFrame(p4_rows).to_csv(RESULTS_DIR / "problem4_transformer_summary.csv", index=False)
 
     plot_histories("problem1_transformer_history*.csv", "Problem 1 Transformer Loss Curves", "problem1_transformer_loss.png")

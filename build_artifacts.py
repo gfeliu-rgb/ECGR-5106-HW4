@@ -133,31 +133,31 @@ Repository: {GITHUB_URL}
 
 ## Experimental Notes
 
-All notebooks are included with executed outputs visible. The code uses PyTorch transformer models, the same Homework 2 character sequence, the provided Tiny Shakespeare file, and the same Homework 3 80/20 train-validation split stored in `results/hw3_split_indices.json`. The CPU run intentionally uses compact models and short training schedules so every requested comparison can be reproduced locally.
+All notebooks are included with executed outputs visible. The code uses PyTorch transformer models, the same Homework 2 character sequence, the provided Tiny Shakespeare file, and the same Homework 3 80/20 train-validation split stored in `results/hw3_split_indices.json`. The experiments train every listed block/head combination from the assignment grid. The listed grid of 1, 2, and 4 transformer blocks crossed with 2 and 4 heads gives six concrete configurations, and all six were run for both translation directions.
 
 ## Problem 1
 
-The best transformer validation accuracy on the assigned paragraph was {p1_best.valid_accuracy:.4f} at sequence length {int(p1_best.sequence_length)}. Compared with the best Homework 2 RNN-family result ({hw2_p1_best.cell_type}, sequence length {int(hw2_p1_best.sequence_length)}, validation accuracy {hw2_p1_best.valid_accuracy:.4f}), this lightweight transformer underperformed in top-1 accuracy but remained competitive in top-3 accuracy. The likely cause is data scale: self-attention has more parameters and less built-in recurrence bias, so it needs more text or more epochs to exploit the longer context.
+The best transformer validation accuracy on the assigned paragraph was {p1_best.valid_accuracy:.4f} at sequence length {int(p1_best.sequence_length)}. Compared with the best Homework 2 RNN-family result ({hw2_p1_best.cell_type}, sequence length {int(hw2_p1_best.sequence_length)}, validation accuracy {hw2_p1_best.valid_accuracy:.4f}), the transformer was close in top-1 accuracy and competitive in top-3 accuracy. The RNN-family model still has an advantage on this tiny paragraph because recurrence is a strong inductive bias for very small sequential datasets, while self-attention pays more parameters to learn context relationships.
 
 Training time increased from {t['p1'].sequence_length.min()} to {t['p1'].sequence_length.max()} characters because causal self-attention scales approximately with sequence_length^2 while the feed-forward layers scale linearly in sequence length. The validation loss did not improve at length 30, which indicates the extra context did not overcome the small-data overfitting/noise penalty.
 
 ## Problem 2
 
-For Tiny Shakespeare, the lowest validation loss was {p2_best.valid_loss:.4f} from L={int(p2_best.num_layers)}, H={int(p2_best.num_heads)}, sequence length {int(p2_best.sequence_length)}. The best Homework 2 recurrent result by validation loss was {hw2_p2_best.cell_type} with sequence length {int(hw2_p2_best.sequence_length)} and validation loss {hw2_p2_best.valid_loss:.4f}. The transformer reached similar character accuracy after only two lightweight epochs, but the recurrent model had a longer training budget and generated more coherent samples.
+For Tiny Shakespeare, the lowest validation loss was {p2_best.valid_loss:.4f} from L={int(p2_best.num_layers)}, H={int(p2_best.num_heads)}, sequence length {int(p2_best.sequence_length)}. The best Homework 2 recurrent result by validation loss was {hw2_p2_best.cell_type} with sequence length {int(hw2_p2_best.sequence_length)} and validation loss {hw2_p2_best.valid_loss:.4f}. The transformer therefore slightly improved the best validation-loss result while also exposing the cost of attention through larger operation counts at longer sequence lengths.
 
-Depth had the clearest model-size effect: moving from 1 to 4 transformer blocks increased parameters and training time. Four blocks gave the strongest validation loss in this CPU run, suggesting added depth helped representation capacity more than it hurt optimization. Increasing heads from 2 to 4 did not consistently improve validation loss because d_model was fixed at 48, so each head received a smaller subspace.
+Depth had the clearest model-size effect: moving from 1 to 4 transformer blocks increased parameters and training time. The 4-block Tiny Shakespeare models drove training loss lower but validation loss became worse, which is a clear overfitting signal. Increasing heads from 2 to 4 did not consistently improve validation loss because d_model was fixed, so each head received a smaller subspace and the added attention partitioning did not offset the generalization penalty.
 
 ## Problem 3
 
-For English-to-French translation, the best transformer configuration by BLEU-4 was L={int(p3_best.num_layers)}, H={int(p3_best.num_heads)} with BLEU-4 {p3_best.bleu4:.4f} and validation loss {p3_best.valid_loss:.4f}. The Homework 3 attention GRU reached word BLEU-4 {hw3_best_enfr.word_bleu4:.4f}; therefore the RNN attention baseline remains stronger under this limited transformer training budget. Exact match was 0 for every model because exact sentence matching is a harsh metric on a small translation set, especially when outputs are short and partially trained.
+For English-to-French translation, the best transformer configuration by BLEU-4 was L={int(p3_best.num_layers)}, H={int(p3_best.num_heads)} with BLEU-4 {p3_best.bleu4:.4f} and validation loss {p3_best.valid_loss:.4f}. The Homework 3 attention GRU reached word BLEU-4 {hw3_best_enfr.word_bleu4:.4f}, so the best transformer substantially improved the BLEU score on the same validation split. Exact sequence accuracy remained low because exact sentence matching is much stricter than BLEU: a translation can share many correct n-grams and still fail exact match due to a single article, word-order change, or synonym.
 
-The qualitative samples show that the transformer often learns frequent tokens before full sentence structure. That behavior matches the high validation perplexity and low BLEU scores: the model is beginning to fit the vocabulary distribution but has not converged enough for fluent sentence-level generation.
+The qualitative samples show that the transformer captures many high-frequency phrase patterns and short sentence structures. The remaining errors are mostly word-choice and word-order errors rather than complete failures, which is why BLEU improves much more than exact-match accuracy.
 
 ## Problem 4
 
 For French-to-English translation, the best transformer configuration by BLEU-4 was L={int(p4_best.num_layers)}, H={int(p4_best.num_heads)} with BLEU-4 {p4_best.bleu4:.4f} and validation loss {p4_best.valid_loss:.4f}. This direction was easier than English-to-French in this run: validation losses were lower and the best BLEU was higher. That is consistent with the target vocabulary being smaller for English ({int(p4_best.target_vocab)} vs. the French target vocabulary of {int(p3_best.target_vocab)}), making next-token prediction less sparse.
 
-The comparison with Homework 3 still favors the attention GRU in absolute BLEU, but the transformer direction trend is meaningful: French-to-English produced stronger held-out loss and BLEU under the same split, architecture grid, and training budget.
+Compared with Homework 3, the transformer gives a higher BLEU score than the attention GRU in both directions. The direction trend is also meaningful: French-to-English produced the best overall BLEU and generally lower validation loss, supporting the conclusion that the English target side was easier to optimize for this dataset.
 """
     (REPORT / "homework4_report.md").write_text(report_md)
 
@@ -171,9 +171,9 @@ The comparison with Homework 3 still favors the attention GRU in absolute BLEU, 
             "## Problem 2 Analysis",
             f"The lowest Tiny Shakespeare validation loss was {p2_best.valid_loss:.4f} for L={int(p2_best.num_layers)}, H={int(p2_best.num_heads)}, seq={int(p2_best.sequence_length)}. Deeper models improved loss but increased parameter count and training time. More heads were not automatically better because the embedding dimension was fixed.",
             "## Problem 3 Analysis",
-            f"The best English-to-French transformer BLEU-4 was {p3_best.bleu4:.4f}. The Homework 3 attention GRU remained stronger, which is expected because the transformer run was deliberately compact and short on CPU. The samples and loss curves show partial vocabulary learning rather than full convergence.",
+            f"The best English-to-French transformer BLEU-4 was {p3_best.bleu4:.4f}, compared with {hw3_best_enfr.word_bleu4:.4f} for the Homework 3 attention GRU baseline. This is a substantial improvement on the same held-out split. Exact match is still low because exact sentence equality is much harsher than BLEU for translation.",
             "## Problem 4 Analysis",
-            f"The best French-to-English transformer BLEU-4 was {p4_best.bleu4:.4f}. This direction had lower validation loss than English-to-French, most likely because the English target vocabulary is smaller and easier to predict in this dataset.",
+            f"The best French-to-English transformer BLEU-4 was {p4_best.bleu4:.4f}, compared with {hw3_best_fren.word_bleu4:.4f} for the Homework 3 attention GRU baseline. This direction had the strongest BLEU result overall, most likely because the English target vocabulary is smaller and easier to predict in this dataset.",
         ])
         add_table_page(pdf, "Problem 1 Transformer Results", selected_cols(t["p1"], ["sequence_length", "train_loss", "valid_loss", "valid_accuracy", "valid_top3_accuracy", "valid_perplexity", "parameter_count", "approx_attention_ops", "train_seconds"]))
         add_table_page(pdf, "Problem 1 Homework 2 RNN Comparison", selected_cols(t["hw2_p1"], ["cell_type", "sequence_length", "valid_loss", "valid_accuracy", "valid_top3_accuracy", "valid_perplexity", "parameter_count", "train_seconds"]), 6)
@@ -182,6 +182,12 @@ The comparison with Homework 3 still favors the attention GRU in absolute BLEU, 
         add_table_page(pdf, "Problem 3 English-to-French Transformer Results", selected_cols(t["p3"], ["num_layers", "num_heads", "train_loss", "valid_loss", "sequence_accuracy", "bleu4", "valid_perplexity", "parameter_count", "train_seconds"]), 6)
         add_table_page(pdf, "Problem 4 French-to-English Transformer Results", selected_cols(t["p4"], ["num_layers", "num_heads", "train_loss", "valid_loss", "sequence_accuracy", "bleu4", "valid_perplexity", "parameter_count", "train_seconds"]), 6)
         add_table_page(pdf, "Homework 3 RNN Translation Baselines", selected_cols(t["hw3"], ["direction", "architecture", "best_val_loss", "exact_match", "word_bleu4", "char_bleu4", "seconds"]), 6)
+        p3_sample_path = RESULTS / f"problem3_en_fr_L{int(p3_best.num_layers)}_H{int(p3_best.num_heads)}_samples.csv"
+        p4_sample_path = RESULTS / f"problem4_fr_en_L{int(p4_best.num_layers)}_H{int(p4_best.num_heads)}_samples.csv"
+        if p3_sample_path.exists():
+            add_table_page(pdf, "Problem 3 Qualitative Validation Samples", selected_cols(pd.read_csv(p3_sample_path).head(6), ["source", "reference", "prediction", "exact_match", "sentence_bleu4"]), 5)
+        if p4_sample_path.exists():
+            add_table_page(pdf, "Problem 4 Qualitative Validation Samples", selected_cols(pd.read_csv(p4_sample_path).head(6), ["source", "reference", "prediction", "exact_match", "sentence_bleu4"]), 5)
         add_images_page(pdf, "Loss Curves", ["problem1_transformer_loss.png", "problem2_transformer_loss.png", "problem3_transformer_loss.png", "problem4_transformer_loss.png"])
         add_images_page(pdf, "BLEU Comparison Plots", ["problem3_bleu.png", "problem4_bleu.png"])
 
