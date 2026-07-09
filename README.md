@@ -18,7 +18,6 @@ Repository link for the report: https://github.com/gfeliu-rgb/ECGR-5106-HW4
 
 ```bash
 python src/hw4_transformers.py --run-all
-python build_artifacts.py
 ```
 
-The translation split is copied from Homework 3 in `results/hw3_split_indices.json`.
+The translation split is copied from Homework 3 in `results/hw3_split_indices.json`. The executed notebooks and PDF report are included in the repository.
