@@ -3,7 +3,7 @@
 Name: Gilberto Feliu  
 Student ID: 801257813  
 Assignment: Homework 4  
-Repository: https://github.com/Gilbertofeliu/ECGR-5106-HW4
+Repository: https://github.com/gfeliu-rgb/ECGR-5106-HW4
 
 ## Experimental Notes
 

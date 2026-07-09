@@ -2,7 +2,7 @@
 
 This repository contains the executed Homework 4 transformer experiments and report for Gilberto Feliu.
 
-Repository link for the report: https://github.com/Gilbertofeliu/ECGR-5106-HW4
+Repository link for the report: https://github.com/gfeliu-rgb/ECGR-5106-HW4
 
 ## Files
 

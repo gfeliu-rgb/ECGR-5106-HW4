@@ -14,7 +14,7 @@ PLOTS = ROOT / "plots"
 REPORT = ROOT / "report"
 REPORT.mkdir(exist_ok=True)
 
-GITHUB_URL = "https://github.com/Gilbertofeliu/ECGR-5106-HW4"
+GITHUB_URL = "https://github.com/gfeliu-rgb/ECGR-5106-HW4"
 
 
 def fmt(value):
